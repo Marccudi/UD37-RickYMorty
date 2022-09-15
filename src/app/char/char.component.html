@@ -1,18 +1,26 @@
-<div class="container">
-  <h1>{{character.name}}</h1>
+<div class="container pt-5">
   <div class="row">
     <div class="col">
       <img src={{character.image}}>
     </div>
     <div class="col">
-      <span class="fw-bold">Status:</span><br><span class="p-4">{{character.status}}</span><br>
-      <span class="fw-bold">Especie:</span><br><span class="p-4">{{character.species}}</span><br>
-      <span class="fw-bold">Genero:</span><br><span class="p-4">{{character.gender}}</span><br>
+      <span class="fw-bold">Name:</span><br> <input type="text"
+      class="form-control" id="status" [(ngModel)]="currentChar.name"><br>
+      <span class="fw-bold">Status:</span><br> <input type="text"
+      class="form-control" id="status" [(ngModel)]="currentChar.status"><br>
+      <span class="fw-bold">Especie:</span><br> <input type="text"
+      class="form-control" id="status" [(ngModel)]="currentChar.species"><br>
+      <span class="fw-bold">Genero:</span><br> <input type="text"
+      class="form-control" id="status" [(ngModel)]="currentChar.gender"><br>
+      <span class="fw-bold">image:</span><br> <input type="text"
+      class="form-control" id="status" [(ngModel)]="currentChar.image"><br>
     </div>
-    <div class="col">
-      <button class="btn btn-danger" (click)="delChar()">Delete</button>
-      <button class="btn btn-success" (click)="editChar()">edit</button>
-    </div>
+
+  </div>
+  <div class="row">
+      <button class="btn btn-danger mt-2" (click)="delChar()">Delete</button>
+      <button class="btn btn-success mt-2" (click)="updateChar()">Edit</button>
+
   </div>
 </div>
 

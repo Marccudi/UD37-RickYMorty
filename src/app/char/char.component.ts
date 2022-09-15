@@ -10,7 +10,7 @@ import { CharactersService } from '../services/characters.service';
   styleUrls: ['./char.component.css']
 })
 export class CharComponent implements OnInit {
-
+    mensaje='';
     id:string|null="";
     character:any = null;
     baseUrl = 'http://localhost:3000/Characters';
@@ -39,7 +39,20 @@ export class CharComponent implements OnInit {
           console.log('problemas');
         }
       )
+
+        this.charServ.get(this.id)
+        .subscribe(
+          data => {
+            this.currentChar = data;
+          },
+          error => {
+            console.log(error);
+          }
+        )
+
+
   }
+
   delChar(){
     this.id = this.route.snapshot.paramMap.get('id');
     this.charServ.delete(this.id)
@@ -53,8 +66,37 @@ export class CharComponent implements OnInit {
     )
 
   }
+
+updateChar(){
+  this.mensaje="";
+
+  this.charServ.update(this.currentChar.id, this.currentChar)
+    .subscribe(
+      response => {
+        this.mensaje = response.mensaje ? response.mensaje : 'Guardado Ok';
+        alert(this.mensaje)
+        window.location.reload();
+      },
+      error => {
+        console.log(error);
+      }
+    )
+
+  }
+
+
   editChar(){
     this.id = this.route.snapshot.paramMap.get('id');
+
+    this.charServ.update(this.id, this.currentChar)
+    .subscribe(
+      response => {
+        this.mensaje = response.mensaje ? response.mensaje: 'El personaje se ha actualizado ok';
+      },
+      error => {
+        console.log(error);
+      }
+    )
 
   }
 
