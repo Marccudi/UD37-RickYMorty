@@ -13,8 +13,7 @@ export class CharComponent implements OnInit {
     mensaje='';
     id:string|null="";
     character:any = null;
-    //baseUrl = 'http://localhost:3000/Characters';
-    baseUrl = 'https://master.d38hrbvvil2al9.amplifyapp.com//Characters';
+    baseUrl = 'http://localhost:3000/Characters';
     currentChar:Characters={
       id: 0,
       name: '',
