@@ -37,7 +37,7 @@ export class CharactersService {
     }
 
     findByName(name:any): Observable<Characters[]>{
-      return this.http.get<Characters[]>(`${baseUrl}/title=${name}`);
+      return this.http.get<Characters[]>(`${baseUrl}?name=${name}`);
     }
 
 
