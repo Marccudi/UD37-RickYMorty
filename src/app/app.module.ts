@@ -8,19 +8,27 @@ import { CharactersComponent } from './characters/characters.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CharComponent } from './char/char.component';
+import { AddCharacterComponent } from './components/add-character/add-character.component';
+import { CharactersDetailsComponent } from './components/characters-details/characters-details.component';
+import { FormsModule } from '@angular/forms';
+// import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CharactersComponent,
+    CharactersComponent, //es una ruta del ejercicio anterior
     AboutComponent,
-    CharComponent
+    CharComponent,
+    AddCharacterComponent,
+    CharactersDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    // NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HomeComponent } from './home/home.component';
 import { CharComponent } from './char/char.component';
+import { AddCharacterComponent } from './components/add-character/add-character.component';
 
 const routes: Routes = [
   {
@@ -17,10 +18,14 @@ const routes: Routes = [
     component:AboutComponent
   },{
     path:'',
-    component:HomeComponent
+    redirectTo:'home',
+    pathMatch:'full'
   },{
     path:'char/:id',
     component:CharComponent
+  },{
+    path:'add',
+    component:AddCharacterComponent
   }
 ];
 
