@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Characters } from '../models/Characters.model';
 
-const baseUrl = 'http://localhost:3000/Characters';
+const baseUrl = 'https://ud41-rick-y-morty.herokuapp.com/Characters';
 
 @Injectable({
   providedIn: 'root'

@@ -13,7 +13,8 @@ export class CharComponent implements OnInit {
     mensaje='';
     id:string|null="";
     character:any = null;
-    baseUrl = 'http://localhost:3000/Characters';
+
+    baseUrl = 'https://ud41-rick-y-morty.herokuapp.com/Characters';
     currentChar:Characters={
       id: 0,
       name: '',
