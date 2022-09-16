@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false
   errorMessage=''
   roles: string[]=[]
-  user=''
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
@@ -40,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = true
         this.roles = this.tokenStorage.getUser().roles
         window.location.reload()
-        this.user = this.tokenStorage.getUser();
+
 
       },
         err => {
