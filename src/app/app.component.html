@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item ps-5">
           <a class="navbar-brand" routerLink="/home">Rick and Morty</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +9,7 @@
           </button>
         </li>
       </ul>
-      <ul class="navbar-nav pe-5">
+      <ul class="navbar-nav pe-5 me-auto">
         <li class="nav-item">
           <a routerLink="/home" class="nav-link">Home</a>
         </li>
@@ -17,16 +17,34 @@
           <a routerLink="/characters" class="nav-link">Characters</a>
         </li>
         <li class="nav-item pe-3">
-          <a  routerLink="/about" class="nav-link">About</a>
+          <a routerLink="/about" class="nav-link">About</a>
         </li>
         <li class="nav-item pe-3">
-          <a  routerLink="/add" class="nav-link">Añadir</a>
+          <a routerLink="/add" class="nav-link">Añadir</a>
         </li>
+      </ul>
+      <ul class="navbar-nav pe-5">
         <li class="nav-item">
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
+        </li>
+      </ul>
+      <ul  class="navbar-nav pe-5" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a routerLink="/register" class="nav-link">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login" class="nav-link">Login</a>
+        </li>
+      </ul>
+      <ul  class="navbar-nav pe-5" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a routerLink="/profile" class="nav-link">{{ username }}</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="logout()" class="nav-link">LogOut</a>
         </li>
       </ul>
     </div>

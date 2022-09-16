@@ -5,6 +5,9 @@ import { CharactersComponent } from './characters/characters.component';
 import { HomeComponent } from './home/home.component';
 import { CharComponent } from './char/char.component';
 import { AddCharacterComponent } from './components/add-character/add-character.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,15 @@ const routes: Routes = [
   },{
     path:'add',
     component:AddCharacterComponent
+  },{
+    path:'login',
+    component:LoginComponent
+  },{
+    path:'register',
+    component:RegisterComponent
+  },{
+    path:'profile',
+    component:ProfileComponent
   }
 ];
 
